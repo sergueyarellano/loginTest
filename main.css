@@ -1,7 +1,27 @@
+body {
+  padding-top:50px;
+}
+
 a {
   color: white;
 }
 
 a:hover {
   text-decoration:none;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  overflow-x: hidden;
+}
+
+.nested {
+  margin-left: 10%;
+}
+
+.title {
+  background-color: #337ab7;
+  color: white;
 }

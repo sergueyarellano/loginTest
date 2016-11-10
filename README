@@ -1,0 +1,5 @@
+open a terminal
+go to /loginTest root
+run "python -m SimpleHTTPServer" or the one you like
+
+open the browser and type "localhost:8000" (default port)

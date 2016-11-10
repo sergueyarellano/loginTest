@@ -1,19 +1,19 @@
-<div class="row col-sm-6 col-sm-offset-3">
-  <div class="jumbotron">
-    <h1>Login</h1>
-
-    <form>
-      <div class="form-group">
-        <label>Data loader</label>
-        <input type="text" class="form-control">
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="text" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-block btn-primary">
-        <span>Login</span>
-      </button>
-    </form>
+<div class="row col-sm-6 col-sm-offset-3 jumbotron">
+  <div ng-repeat="title in data.queryResults">
+    <ul class="list-group" ng-repeat="(key, value) in title">
+      <li class="list-group-item title">{{key.toUpperCase()}}</li>
+      <li class="list-group-item nested"
+        ng-hide="data.isObject(value)">{{value}}</li>
+      <li class="list-group-item" ng-show="data.isObject(value)"
+        ng-repeat="(nestedKey, nestedValue) in value track by $index">
+        <strong>{{nestedKey}}</strong>
+        <div class="nested" ng-switch="data.matchRegex(nestedValue)">
+          <div ng-switch-when="true">
+            <img src="{{nestedValue}}" alt="personalPhoto">
+          </div>
+          <div ng-switch-default>{{nestedValue}}</div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>

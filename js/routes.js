@@ -8,9 +8,9 @@ angular.module('routesApp', ['ngRoute'])
     .when('/', {
       templateUrl: 'views/login.html',
     })
-      .when('/data', {
-        templateUrl: 'views/data.html',
-        controller: 'dataController',
-        controllerAs: 'data'
-      });
-  })
+    .when('/data', {
+      templateUrl: 'views/data.html',
+      controller: 'dataController',
+      controllerAs: 'data'
+    });
+  });
